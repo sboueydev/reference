@@ -416,8 +416,8 @@
 </pre></div>
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>This creates an interactive environment. I usually use either sh or bash as the command in order to acces the container from the command line.You can find the volumes in var/lib/docker/volumes</p>
 </div>
 </li>
@@ -444,8 +444,8 @@
 </pre></div>
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>Using docker exec you are able to have multiple instances of terminal running within your container which is highly useful because it can let you do things like edit a scss file in terminal while watching and compiling it in another. I usually use either sh or bash as the command for this as well.</p>
 </div>
 </li>
@@ -517,10 +517,6 @@ COPY . /usr/src/app
 </div>
 <h3 id="shortcuts">Shortcuts<a class="headerlink" href="#shortcuts" title="Permanent link">&para;</a></h3>
 <p>I've used <a href="https://github.com/autokey/autokey">AutoKey</a> to create my own expandable abbreviations for docker. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>I also created a Docker usergroup when I configured my installation so that Docker wouldn't require the constant use of "sudo".</p>
-</div>
 <ul>
 <li>dbuild = docker build -t</li>
 <li>dbuild? = docker build -t imagename:tag</li>
