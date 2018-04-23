@@ -55,6 +55,8 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
+      <link rel="stylesheet" href="../css/extra.css">
+    
     
   </head>
   
@@ -286,6 +288,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../tumblr/" title="Tumblr" class="md-nav__link">
+      Tumblr
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../wordpress/" title="Wordpress" class="md-nav__link">
       Wordpress
     </a>
@@ -357,9 +371,9 @@
               
                 
                 
-                <h1 id="docker">Docker</h1>
+                <h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
 <p>Listed below are some of my most commonly used commands / workflows.</p>
-<h3 id="workflow">Workflow</h3>
+<h3 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Create a dockerfile</p>
@@ -370,7 +384,10 @@
 </pre></div>
 
 
-<p><em>Note: do not forget the dot</em></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Do not forget the dot</p>
+</div>
 </li>
 <li>
 <p>Run (create and start) container</p>
@@ -399,7 +416,10 @@
 </pre></div>
 
 
-<p><em>Note: this creates an interactive environment. I usually use either sh or bash as the command in order to acces the container from the command line.You can find the volumes in var/lib/docker/volumes</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This creates an interactive environment. I usually use either sh or bash as the command in order to acces the container from the command line.You can find the volumes in var/lib/docker/volumes</p>
+</div>
 </li>
 <li>
 <p>Exit the terminal by either typing exit or pressing <code>CTRL + d</code></p>
@@ -424,10 +444,13 @@
 </pre></div>
 
 
-<p><em>Note: using docker exec you are able to have multiple instances of terminal running within your container which is highly useful because it can let you do things like edit a scss file in terminal while watching and compiling it in another. I usually use either sh or bash as the command for this as well.</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using docker exec you are able to have multiple instances of terminal running within your container which is highly useful because it can let you do things like edit a scss file in terminal while watching and compiling it in another. I usually use either sh or bash as the command for this as well.</p>
+</div>
 </li>
 </ul>
-<h3 id="other-common-commands">Other Common Commands</h3>
+<h3 id="other-common-commands">Other Common Commands<a class="headerlink" href="#other-common-commands" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>View running containers</p>
@@ -472,7 +495,7 @@
 
 </li>
 </ul>
-<h3 id="example-dockerfile">Example Dockerfile</h3>
+<h3 id="example-dockerfile">Example Dockerfile<a class="headerlink" href="#example-dockerfile" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="k">FROM</span><span class="s"> node:alpine</span>
 
 <span class="k">RUN</span> apk update <span class="o">&amp;&amp;</span> apk upgrade <span class="o">&amp;&amp;</span> apk add nano
@@ -488,11 +511,16 @@ COPY package.json /usr/src/app/package.json
 COPY . /usr/src/app
 </pre></div>
 
-
-<p><em>Note: When using an alpine image base you must use apk instead of apt.</em></p>
-<h3 id="shortcuts">Shortcuts</h3>
-<p>I've used <a href="https://github.com/autokey/autokey">AutoKey</a> to create my own expandable abbreviations for docker. 
-<em>Note: I also created a Docker usergroup when I configured my installation so that Docker wouldn't require the constant use of "sudo".</em></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When using an alpine image base you must use apk instead of apt.</p>
+</div>
+<h3 id="shortcuts">Shortcuts<a class="headerlink" href="#shortcuts" title="Permanent link">&para;</a></h3>
+<p>I've used <a href="https://github.com/autokey/autokey">AutoKey</a> to create my own expandable abbreviations for docker. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I also created a Docker usergroup when I configured my installation so that Docker wouldn't require the constant use of "sudo".</p>
+</div>
 <ul>
 <li>dbuild = docker build -t</li>
 <li>dbuild? = docker build -t imagename:tag</li>
