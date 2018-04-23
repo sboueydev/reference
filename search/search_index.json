@@ -1,0 +1,159 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Welcome\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.", 
+            "title": "Welcome"
+        }, 
+        {
+            "location": "/#welcome", 
+            "text": "For full documentation visit  mkdocs.org .", 
+            "title": "Welcome"
+        }, 
+        {
+            "location": "/#commands", 
+            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
+            "title": "Commands"
+        }, 
+        {
+            "location": "/bitnami/", 
+            "text": "Bitnami\n\n\nCreate new instance of Wordpress on Bitnami LAMP stack\n\n\n./bitnami-wordpress-VERSION-module-linux-x64-installer.run --wordpress_instance_name NEW_BLOG_NAME", 
+            "title": "Bitnami"
+        }, 
+        {
+            "location": "/bitnami/#bitnami", 
+            "text": "", 
+            "title": "Bitnami"
+        }, 
+        {
+            "location": "/bitnami/#create-new-instance-of-wordpress-on-bitnami-lamp-stack", 
+            "text": "./bitnami-wordpress-VERSION-module-linux-x64-installer.run --wordpress_instance_name NEW_BLOG_NAME", 
+            "title": "Create new instance of Wordpress on Bitnami LAMP stack"
+        }, 
+        {
+            "location": "/docker/", 
+            "text": "Docker\n\n\nListed below are some of my most commonly used commands / workflows.\n\n\nWorkflow\n\n\n\n\n\n\nCreate a dockerfile\n\n\n\n\n\n\nBuild image from dockerfile \n\n\ndocker build -t imagename:tag .\n\n\n\n\n\nNote: do not forget the dot\n\n\n\n\n\n\nRun (create and start) container\n\n\ndocker run -ti --name containername imagename:tag command\n\n\n\n\n\n\n\ndocker run -ti -v \n$(pwd)\n/absolutepathincontainer/ --name containername imagename:tag command\n\n\n\n\n\n\n\ndocker run -ti \\\n  --name containername \\\n  --mount source=nameofvolume,target=/nameoftargetincontainer \\\n  imagename:tag\n\n\n\n\n\nOr do the same thing as above with -v\n\n\ndocker run -ti \\\n    --name containername \\\n    -v nameofvolume:/nameoftargetincontainer \\\n    imagename:tag\n\n\n\n\n\nNote: this creates an interactive environment. I usually use either sh or bash as the command in order to acces the container from the command line.You can find the volumes in var/lib/docker/volumes\n\n\n\n\n\n\nExit the terminal by either typing exit or pressing \nCTRL + d\n\n\n\n\n\n\nStop container\n\n\ndocker stop containername\n\n\n\n\n\n\n\n\n\nStart container\n\n\ndocker start containername\n\n\n\n\n\n\n\n\n\nAccess the container's command line again\n\n\ndocker exec -ti containername command\n\n\n\n\n\nNote: using docker exec you are able to have multiple instances of terminal running within your container which is highly useful because it can let you do things like edit a scss file in terminal while watching and compiling it in another. I usually use either sh or bash as the command for this as well.\n\n\n\n\n\n\nOther Common Commands\n\n\n\n\n\n\nView running containers\n\n\ndocker ps\n\n\n\n\n\n\n\n\n\nView all containers \n\n\ndocker ps -a\n\n\n\n\n\n\n\n\n\nView images\n\n\ndocker images\n\n\n\n\n\n\n\n\n\nRemove a container\n\n\ndocker rm containername\n\n\n\n\n\n\n\n\n\nRemove an image\n\n\ndocker rmi imagename\n\n\n\n\n\n\n\n\n\nRename a container\n\n\ndocker rename oldcontainername newcontainername\n\n\n\n\n\n\n\n\n\nExample Dockerfile\n\n\nFROM\n node:alpine\n\n\n\nRUN\n apk update \n apk upgrade \n apk add nano\n\n\nRUN\n npm install -g gulp\n\n\nWORKDIR\n /usr/src/app\n\n\nCOPY package.json /usr/src/app/package.json\n\n\nRUN\n npm install\n\nCOPY . /usr/src/app\n\n\n\n\n\nNote: When using an alpine image base you must use apk instead of apt.\n\n\nShortcuts\n\n\nI've used \nAutoKey\n to create my own expandable abbreviations for docker. \n\nNote: I also created a Docker usergroup when I configured my installation so that Docker wouldn't require the constant use of \"sudo\".\n\n\n\n\ndbuild = docker build -t\n\n\ndbuild? = docker build -t imagename:tag\n\n\ndru, drun = docker run\n\n\ndrut, drunt = docker run -ti --name\n\n\ndrut?, drunt? = docker run -ti --name containername imagename:tag command\n\n\ndex = docker exec\n\n\ndext = docker exec -ti\n\n\ndex?, dext? = docker exec -ti containername command", 
+            "title": "Docker"
+        }, 
+        {
+            "location": "/docker/#docker", 
+            "text": "Listed below are some of my most commonly used commands / workflows.", 
+            "title": "Docker"
+        }, 
+        {
+            "location": "/docker/#workflow", 
+            "text": "Create a dockerfile    Build image from dockerfile   docker build -t imagename:tag .  Note: do not forget the dot    Run (create and start) container  docker run -ti --name containername imagename:tag command   docker run -ti -v  $(pwd) /absolutepathincontainer/ --name containername imagename:tag command   docker run -ti \\\n  --name containername \\\n  --mount source=nameofvolume,target=/nameoftargetincontainer \\\n  imagename:tag  Or do the same thing as above with -v  docker run -ti \\\n    --name containername \\\n    -v nameofvolume:/nameoftargetincontainer \\\n    imagename:tag  Note: this creates an interactive environment. I usually use either sh or bash as the command in order to acces the container from the command line.You can find the volumes in var/lib/docker/volumes    Exit the terminal by either typing exit or pressing  CTRL + d    Stop container  docker stop containername    Start container  docker start containername    Access the container's command line again  docker exec -ti containername command  Note: using docker exec you are able to have multiple instances of terminal running within your container which is highly useful because it can let you do things like edit a scss file in terminal while watching and compiling it in another. I usually use either sh or bash as the command for this as well.", 
+            "title": "Workflow"
+        }, 
+        {
+            "location": "/docker/#other-common-commands", 
+            "text": "View running containers  docker ps    View all containers   docker ps -a    View images  docker images    Remove a container  docker rm containername    Remove an image  docker rmi imagename    Rename a container  docker rename oldcontainername newcontainername", 
+            "title": "Other Common Commands"
+        }, 
+        {
+            "location": "/docker/#example-dockerfile", 
+            "text": "FROM  node:alpine  RUN  apk update   apk upgrade   apk add nano RUN  npm install -g gulp WORKDIR  /usr/src/app \n\nCOPY package.json /usr/src/app/package.json RUN  npm install\n\nCOPY . /usr/src/app  Note: When using an alpine image base you must use apk instead of apt.", 
+            "title": "Example Dockerfile"
+        }, 
+        {
+            "location": "/docker/#shortcuts", 
+            "text": "I've used  AutoKey  to create my own expandable abbreviations for docker.  Note: I also created a Docker usergroup when I configured my installation so that Docker wouldn't require the constant use of \"sudo\".   dbuild = docker build -t  dbuild? = docker build -t imagename:tag  dru, drun = docker run  drut, drunt = docker run -ti --name  drut?, drunt? = docker run -ti --name containername imagename:tag command  dex = docker exec  dext = docker exec -ti  dex?, dext? = docker exec -ti containername command", 
+            "title": "Shortcuts"
+        }, 
+        {
+            "location": "/github/", 
+            "text": "GitHub\n\n\nMy personal cheatsheet that details briefly my Git and GitHub workflow.\n\n\nWorkflow\n\n\n\n\n\n\nInitialize git\n\n\ngit init\n\n\n\n\n\n\n\n\n\nAdd files to staging area\n\n\ngit add .\n\n\n\n\n\n\n\n\n\nCommit changes\n\n\ngit commit -m \nType commit message here. Use the present tense. *Potential format = Editedfile: describe changes*\n\n\n\n\n\n\n\n\n\n\nAdd remote host\n\n\ngit remote add origin https://github.com/user/repo.git\n\n\n\n\n\n\n\n\n\nPush to host\n\n\ngit push origin master\n\n\n\n\n\n\n\n\n\nTADA!\n\n\n\n\nOne may also want to pull from host\ngit pull origin master", 
+            "title": "GitHub"
+        }, 
+        {
+            "location": "/github/#github", 
+            "text": "My personal cheatsheet that details briefly my Git and GitHub workflow.", 
+            "title": "GitHub"
+        }, 
+        {
+            "location": "/github/#workflow", 
+            "text": "Initialize git  git init    Add files to staging area  git add .    Commit changes  git commit -m  Type commit message here. Use the present tense. *Potential format = Editedfile: describe changes*     Add remote host  git remote add origin https://github.com/user/repo.git    Push to host  git push origin master    TADA!   One may also want to pull from host git pull origin master", 
+            "title": "Workflow"
+        }, 
+        {
+            "location": "/resources/", 
+            "text": "Resources\n\n\nThis is my personal list of resources inspired by various awesome lists on GitHub. \n\n\nNote: \u2713 denotes something I have personally used before\n\n\nPreprocessors\n\n\nHTML Preprocessors\n\n\n\n\nPug\n \u2713 - Clean and whitespace sensitive html preprocessors formerly known as Jade.\n\n\n\n\nFrameworks\n\n\n\n\nW3.CSS\n \u2713 - This is a CSS framework by w3 schools. It has several gorgeous example \ntemplates\n which display wonderfully on the my mobile device. \n\n\n\n\nUpdate: I tested this framework out recently and I disliked the extra markup it added. I have found this with Bootstrap as well so it is not per say the fault of the framework, just personal preference.\n\n\nStatic Sites\n\n\nAdd-ons\n\n\n\n\nStaticman\n  - Tool to add user-generated content to static sites.\n\n\n\n\nWordpress\n\n\nWordpress Frameworks\n\n\n\n\nTypeRocket\n \u2713 - This is free and it looks really cool. It has a pagebuilder and custom fields. Setup requires Composer. According to the website it's *\"like Advanced Custom Fields + Laravel + Magic in WordPress\"\n\n\n\n\nUpdate: I have now tested this and it's pretty darn cool.\n \n\n\n\n\nUnyson\n - Free drag and drop wordpress framework.\n\n\nGantry\n - Free framework. Includes drag and drop capabilities and works with Grav and Joomla as well as Wordpress.\n\n\n\n\nArticles \n Tutorials\n\n\nCheatsheets, References, and Docs\n\n\n\n\nMarkdown Cheatsheet\n \n\n\nGithub Cheatsheet\n \n\n\nMy Github Cheatsheet\n - This is the git and github guide I made for myself.\n\n\nMy Docker Cheatsheet\n - This is the Docker guide I made for myself.\n\n\nHeroku deploy using Git guide\n\n\n\n\nTumblr\n\n\n\n\nOfficial Documentation - Custom Theme\n\n\nCustom Theme Tutorial by Eris", 
+            "title": "Resources"
+        }, 
+        {
+            "location": "/resources/#resources", 
+            "text": "This is my personal list of resources inspired by various awesome lists on GitHub.   Note: \u2713 denotes something I have personally used before", 
+            "title": "Resources"
+        }, 
+        {
+            "location": "/resources/#preprocessors", 
+            "text": "", 
+            "title": "Preprocessors"
+        }, 
+        {
+            "location": "/resources/#html-preprocessors", 
+            "text": "Pug  \u2713 - Clean and whitespace sensitive html preprocessors formerly known as Jade.", 
+            "title": "HTML Preprocessors"
+        }, 
+        {
+            "location": "/resources/#frameworks", 
+            "text": "W3.CSS  \u2713 - This is a CSS framework by w3 schools. It has several gorgeous example  templates  which display wonderfully on the my mobile device.    Update: I tested this framework out recently and I disliked the extra markup it added. I have found this with Bootstrap as well so it is not per say the fault of the framework, just personal preference.", 
+            "title": "Frameworks"
+        }, 
+        {
+            "location": "/resources/#static-sites", 
+            "text": "", 
+            "title": "Static Sites"
+        }, 
+        {
+            "location": "/resources/#add-ons", 
+            "text": "Staticman   - Tool to add user-generated content to static sites.", 
+            "title": "Add-ons"
+        }, 
+        {
+            "location": "/resources/#wordpress", 
+            "text": "", 
+            "title": "Wordpress"
+        }, 
+        {
+            "location": "/resources/#wordpress-frameworks", 
+            "text": "TypeRocket  \u2713 - This is free and it looks really cool. It has a pagebuilder and custom fields. Setup requires Composer. According to the website it's *\"like Advanced Custom Fields + Laravel + Magic in WordPress\"   Update: I have now tested this and it's pretty darn cool.     Unyson  - Free drag and drop wordpress framework.  Gantry  - Free framework. Includes drag and drop capabilities and works with Grav and Joomla as well as Wordpress.", 
+            "title": "Wordpress Frameworks"
+        }, 
+        {
+            "location": "/resources/#articles-tutorials", 
+            "text": "", 
+            "title": "Articles &amp; Tutorials"
+        }, 
+        {
+            "location": "/resources/#cheatsheets-references-and-docs", 
+            "text": "Markdown Cheatsheet    Github Cheatsheet    My Github Cheatsheet  - This is the git and github guide I made for myself.  My Docker Cheatsheet  - This is the Docker guide I made for myself.  Heroku deploy using Git guide", 
+            "title": "Cheatsheets, References, and Docs"
+        }, 
+        {
+            "location": "/resources/#tumblr", 
+            "text": "Official Documentation - Custom Theme  Custom Theme Tutorial by Eris", 
+            "title": "Tumblr"
+        }, 
+        {
+            "location": "/wordpress/", 
+            "text": "Wordpress\n\n\nSnippets\n\n\nNo Conflict Jquery\n\n\njQuery\n(\nfunction\n(\n$\n)\n \n{\n\n  \n// Now $ is safe to use - it references jQuery within this doc ready function\n\n  \n$\n(\ndocument\n).\nready\n(\nfunction\n()\n \n{\n\n    \n// Insert code here as normal\n\n  \n});\n\n\n});", 
+            "title": "Wordpress"
+        }, 
+        {
+            "location": "/wordpress/#wordpress", 
+            "text": "", 
+            "title": "Wordpress"
+        }, 
+        {
+            "location": "/wordpress/#snippets", 
+            "text": "", 
+            "title": "Snippets"
+        }, 
+        {
+            "location": "/wordpress/#no-conflict-jquery", 
+            "text": "jQuery ( function ( $ )   { \n   // Now $ is safe to use - it references jQuery within this doc ready function \n   $ ( document ). ready ( function ()   { \n     // Insert code here as normal \n   });  });", 
+            "title": "No Conflict Jquery"
+        }
+    ]
+}
